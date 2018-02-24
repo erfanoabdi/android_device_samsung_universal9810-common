@@ -211,6 +211,10 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.2 \
     libxml2
 
+# SamsungDoze
+PRODUCT_PACKAGES += \
+    SamsungDoze
+
 # Seccomp filters
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy \
