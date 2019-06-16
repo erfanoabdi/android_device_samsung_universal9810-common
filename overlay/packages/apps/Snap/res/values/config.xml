@@ -6,5 +6,5 @@
 <resources>
     <bool name="back_camera_open_legacy">false</bool>
     <bool name="front_camera_open_legacy">false</bool>
-    <bool name="support_camera_api_v2">false</bool>
+    <bool name="support_camera_api_v2">true</bool>
 </resources>
