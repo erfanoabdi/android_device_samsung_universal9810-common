@@ -3,4 +3,5 @@
 # Device specific property overrides
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sys.sdcardfs=false
+    ro.sys.sdcardfs=false \
+    debug.sf.latch_unsignaled=1
