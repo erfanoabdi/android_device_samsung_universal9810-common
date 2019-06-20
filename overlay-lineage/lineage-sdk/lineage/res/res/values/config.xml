@@ -8,4 +8,8 @@
     <integer name="config_deviceHardwareKeys">73</integer>
     <integer name="config_deviceHardwareWakeKeys">73</integer>
     <bool name="config_haveHigherAspectRatioScreen">true</bool>
+	<string-array name="config_restartActionsList">
+        <item>restart</item>
+        <item>restart_recovery</item>
+    </string-array>
 </resources>
