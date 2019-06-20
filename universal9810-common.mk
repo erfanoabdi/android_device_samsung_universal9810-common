@@ -44,10 +44,6 @@ PRODUCT_PACKAGES += vndk_package
 PRODUCT_PACKAGES += \
     libvulkan
 
-# HIDL
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/compatibility_matrix.xml:system/compatibility_matrix.xml
-
 # Audio
 USE_XML_AUDIO_POLICY_CONF := 1
 PRODUCT_PACKAGES += \

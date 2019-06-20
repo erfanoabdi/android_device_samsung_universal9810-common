@@ -113,9 +113,6 @@ TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 
-# SELinux
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
-
 # Lineage hardware
 ifneq ($(findstring lineage, $(TARGET_PRODUCT)),)
 BOARD_HARDWARE_CLASS := \

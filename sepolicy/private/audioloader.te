@@ -1,9 +1,0 @@
-type audioloader, domain, coredomain;
-type audioloader_exec, exec_type, file_type;
-init_daemon_domain(audioloader)
-
-binder_use(audioloader)
-binder_call(audioloader, audioserver)
-binder_call(audioserver, audioloader)
-
-allow audioloader audioserver_service:service_manager find;

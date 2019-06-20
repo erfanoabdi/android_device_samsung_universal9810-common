@@ -1,8 +1,0 @@
-type hal_vibrator_9810, domain, coredomain;
-hal_server_domain(hal_vibrator_9810, hal_vibrator)
-
-type hal_vibrator_9810_exec, exec_type, file_type;
-init_daemon_domain(hal_vibrator_9810)
-
-allow hal_vibrator_9810 sysfs:file rw_file_perms;
-allow hal_vibrator_9810 sysfs_vibrator:file rw_file_perms;
