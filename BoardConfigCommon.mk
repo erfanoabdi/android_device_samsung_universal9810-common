@@ -114,8 +114,8 @@ TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 
 # Lineage hardware
 ifneq ($(findstring lineage, $(TARGET_PRODUCT)),)
-BOARD_HARDWARE_CLASS := \
-    hardware/samsung/lineagehw
+JAVA_SOURCE_OVERLAYS := \
+    org.lineageos.hardware|hardware/samsung/lineagehw|**/*.java
 endif
 
 # Releasetools
