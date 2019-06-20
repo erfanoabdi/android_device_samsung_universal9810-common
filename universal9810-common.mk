@@ -34,11 +34,9 @@ PRODUCT_PACKAGES += \
     init.baseband.rc \
     ueventd.samsungexynos9810.rc
 
-# Treble
-PRODUCT_FULL_TREBLE_OVERRIDE := true
-
 # VNDK
-PRODUCT_PACKAGES += vndk_package
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/vndk-compat/vndk-compat.rc:system/etc/init/vndk-compat.rc
 
 # SP-NDK
 PRODUCT_PACKAGES += \
