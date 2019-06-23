@@ -32,8 +32,6 @@ PRODUCT_PACKAGES += \
     init.samsungexynos9810.rc \
     init.samsungexynos9810.usb.rc \
     init.baseband.rc \
-    init.gps.rc \
-    init.wifi.rc \
     ueventd.samsungexynos9810.rc
 
 # Treble

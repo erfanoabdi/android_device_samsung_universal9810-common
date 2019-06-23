@@ -2,6 +2,10 @@ on init
     # Disable vendor overlay
     mount none /vendor/lost+found /vendor/overlay bind
 
+    # Disable odm apps
+    mount none /odm/lost+found /odm/app bind
+    mount none /odm/lost+found /odm/priv-app bind
+
     # Override vendor usb_audio_policy_configuration
     mount none /system/etc/usb_audio_policy_configuration.xml /vendor/etc/usb_audio_policy_configuration.xml bind
 
