@@ -1,8 +1,0 @@
-service audioloader /system/bin/audioloader
-    user system
-    group audio
-    disabled
-    oneshot
-
-on property:init.svc.audioserver=running
-    start audioloader

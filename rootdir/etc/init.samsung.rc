@@ -6,6 +6,14 @@ on init
     mount none /odm/lost+found /odm/app bind
     mount none /odm/lost+found /odm/priv-app bind
 
+    # Override vendor mixer_paths/gains
+    mount none /system/etc/mixer_paths.xml /vendor/etc/mixer_paths.xml bind
+    mount none /system/etc/mixer_gains.xml /vendor/etc/mixer_gains.xml bind
+    mount none /system/etc/mixer_paths_r02.xml /vendor/etc/mixer_paths_r02.xml bind
+    mount none /system/etc/mixer_gains_r02.xml /vendor/etc/mixer_gains_r02.xml bind
+    mount none /system/etc/mixer_paths_r08.xml /vendor/etc/mixer_paths_r08.xml bind
+    mount none /system/etc/mixer_gains_r08.xml /vendor/etc/mixer_gains_r08.xml bind
+
     # Override vendor usb_audio_policy_configuration
     mount none /system/etc/usb_audio_policy_configuration.xml /vendor/etc/usb_audio_policy_configuration.xml bind
 
