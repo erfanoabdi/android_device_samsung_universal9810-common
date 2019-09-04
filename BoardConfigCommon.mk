@@ -145,6 +145,9 @@ endif
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += $(COMMON_PATH)
+
 # Wifi
 TARGET_USES_64_BIT_BCMDHD        := true
 BOARD_WLAN_DEVICE                := bcmdhd
