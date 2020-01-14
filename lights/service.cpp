@@ -1,53 +1,54 @@
 /*
- * Copyright (C) 2018 The LineageOS Project
- * SPDX-License-Identifier: Apache-2.0
+ * Copyright (C) 2019 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 #define LOG_TAG "android.hardware.light@2.0-service.9810"
 
+#include <android-base/logging.h>
 #include <hidl/HidlTransportSupport.h>
 #include <utils/Errors.h>
 
 #include "Light.h"
 
-// libhwbinder:
 using android::hardware::configureRpcThreadpool;
 using android::hardware::joinRpcThreadpool;
 
-// Generated HIDL files
 using android::hardware::light::V2_0::ILight;
 using android::hardware::light::V2_0::implementation::Light;
 
-const static std::string kBacklightPath = "/sys/class/backlight/panel/brightness";
-const static std::string kIndicatorPath = "/sys/class/sec/led/led_blink";
+using android::OK;
+using android::sp;
+using android::status_t;
 
 int main() {
-    std::ofstream backlight(kBacklightPath);
-    if (!backlight) {
-        int error = errno;
-        ALOGE("Failed to open %s (%d): %s", kBacklightPath.c_str(), error, strerror(error));
-        return -error;
-    }
-
-    std::ofstream indicator(kIndicatorPath);
-    if (!indicator) {
-        ALOGI("Indicator light not supported on this device");
-    }
-
-    android::sp<ILight> service = new Light(std::move(backlight), std::move(indicator));
+    sp<ILight> light = new Light();
 
     configureRpcThreadpool(1, true);
 
-    android::status_t status = service->registerAsService();
+    status_t status = light->registerAsService();
 
-    if (status != android::OK) {
-        ALOGE("Cannot register Light HAL service");
-        return 1;
+    if (status != OK) {
+        LOG(ERROR) << "Could not register service for Light HAL";
+        goto shutdown;
     }
 
-    ALOGI("Light HAL Ready.");
+    LOG(INFO) << "Light HAL service is Ready.";
     joinRpcThreadpool();
-    // Under normal cases, execution will not reach this line.
-    ALOGE("Light HAL failed to join thread pool.");
+
+shutdown:
+    // In normal operation, we don't expect the thread pool to shutdown
+    LOG(ERROR) << "Light HAL failed to join thread pool.";
     return 1;
 }
