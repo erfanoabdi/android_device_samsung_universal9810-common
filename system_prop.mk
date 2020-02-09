@@ -4,4 +4,5 @@
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.sdcardfs=false \
-    debug.sf.latch_unsignaled=1
+    debug.sf.latch_unsignaled=1 \
+    persist.sys.sf.color_saturation=1.1
