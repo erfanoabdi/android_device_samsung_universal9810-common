@@ -85,7 +85,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.9810
+    android.hardware.light@2.0-service.samsung
 
 # Fingerprint
 PRODUCT_PACKAGES += \
