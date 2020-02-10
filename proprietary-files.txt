@@ -280,6 +280,13 @@ vendor/lib64/omx/libOMX.Exynos.VP9.Decoder.so
 vendor/lib64/omx/libOMX.Exynos.VP9.Encoder.so
 vendor/lib64/omx/libOMX.Exynos.WMV.Decoder.so
 
+# RenderScript
+vendor/bin/bcc
+vendor/lib64/libbccArm.so
+vendor/lib64/libbcc.so
+vendor/lib64/libLLVM_android.so
+vendor/lib64/libclcore.bc
+
 # RIL
 lib/libsecnativefeature.so
 lib/libsecril-client.so
