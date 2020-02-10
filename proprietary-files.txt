@@ -64,8 +64,6 @@ vendor/etc/audio_policy_volumes.xml
 vendor/etc/default_volume_tables.xml
 
 # Bluetooth
-lib64/android.hardware.bluetooth.a2dp@1.0.so
-lib64/android.hardware.bluetooth@1.0.so
 vendor/lib64/vendor.samsung.hardware.bluetooth@1.0.so
 vendor/bin/hw/android.hardware.bluetooth@1.0-service
 vendor/etc/init/android.hardware.bluetooth@1.0-service.rc
@@ -100,12 +98,8 @@ vendor/lib64/libsynaFpSensorTestNwd.so
 
 # GPS
 etc/gps_debug.conf
-lib/android.hardware.gnss@1.0.so
-lib/android.hardware.gnss@1.1.so
 lib/libfloatingfeature.so
 lib/vendor.samsung.hardware.gnss@1.0.so
-lib64/android.hardware.gnss@1.0.so
-lib64/android.hardware.gnss@1.1.so
 lib64/libfloatingfeature.so
 lib64/vendor.samsung.hardware.gnss@1.0.so
 vendor/bin/hw/gpsd
@@ -238,8 +232,6 @@ vendor/lib64/libMcClient.so
 # NFC
 etc/nfc_key
 etc/nfcee_access.xml
-lib64/android.hardware.nfc@1.0.so
-lib64/android.hardware.nfc@1.1.so
 vendor/etc/libnfc-nci.conf
 vendor/lib64/vendor.samsung.hardware.nfc@1.1.so
 vendor/bin/hw/sec.android.hardware.nfc@1.1-service
