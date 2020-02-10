@@ -79,7 +79,11 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.2-service \
-    android.hardware.graphics.mapper@2.0-impl
+    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.memtrack@1.0-service \
+    android.hardware.memtrack@1.0-impl \
+    libvulkan \
+    libtinyxml
 
 # Health
 PRODUCT_PACKAGES += \
@@ -110,10 +114,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml
-
-# Memory
-PRODUCT_PACKAGES += \
-    android.hardware.memtrack@1.0-impl
 
 # Net
 PRODUCT_PACKAGES += \
@@ -182,10 +182,6 @@ PRODUCT_PACKAGES += \
     init.samsungexynos9810.usb.rc \
     init.baseband.rc \
     ueventd.samsungexynos9810.rc
-
-# SP-NDK
-PRODUCT_PACKAGES += \
-    libvulkan
 
 # RenderScript
 PRODUCT_PACKAGES += \
