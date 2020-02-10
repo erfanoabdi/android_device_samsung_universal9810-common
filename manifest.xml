@@ -198,16 +198,22 @@
         <interface>
             <name>IRadio</name>
             <instance>slot1</instance>
+            <instance>slot2</instance>
         </interface>
         <interface>
             <name>ISap</name>
             <instance>slot1</instance>
+            <instance>slot2</instance>
         </interface>
     </hal>
     <hal format="hidl">
         <name>android.hardware.renderscript</name>
         <transport arch="32+64">passthrough</transport>
         <version>1.0</version>
+        <interface>
+            <name>IDevice</name>
+            <instance>default</instance>
+        </interface>
     </hal>
     <hal format="hidl">
         <name>android.hardware.sensors</name>
@@ -306,6 +312,7 @@
         <interface>
             <name>IRadio</name>
             <instance>slot1</instance>
+            <instance>slot2</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -314,7 +321,10 @@
         <version>1.0</version>
         <interface>
             <name>ISecChannel</name>
+            <instance>epdgd</instance>
+            <instance>epdgd2</instance>
             <instance>imsd</instance>
+            <instance>imsd2</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -333,6 +343,7 @@
         <interface>
             <name>ISecBridge</name>
             <instance>slot1</instance>
+            <instance>slot2</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -342,6 +353,7 @@
         <interface>
             <name>IOemHook</name>
             <instance>slot1</instance>
+            <instance>slot2</instance>
         </interface>
     </hal>
     <hal format="hidl">
