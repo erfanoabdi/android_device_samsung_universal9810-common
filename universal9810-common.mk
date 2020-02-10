@@ -262,7 +262,7 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-impl
 
 # Property overrides
--include $(LOCAL_PATH)/system_prop.mk
+-include $(LOCAL_PATH)/vendor_prop.mk
 
 # Call proprietary blob setup
 $(call inherit-product, vendor/samsung/universal9810-common/universal9810-common-vendor.mk)
