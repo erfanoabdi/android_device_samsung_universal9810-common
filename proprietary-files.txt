@@ -20,6 +20,9 @@ vendor/lib/hw/sound_trigger.primary.universal9810.so
 vendor/lib/lib_SoundAlive_3DPosition_ver202.so
 vendor/lib/libaboxpcmdump.so
 vendor/lib/libdatamod.so
+vendor/lib/libaudioproxy.so
+vendor/lib/libcodecdspdump.so
+vendor/lib/libalsautils_sec.so
 
 # Audio - Effects
 vendor/lib/soundfx/libaudioeffectoffload.so
@@ -98,9 +101,9 @@ vendor/lib64/libsynaFpSensorTestNwd.so
 
 # GPS
 etc/gps_debug.conf
-lib/libfloatingfeature.so
+vendor/lib/libfloatingfeature.so
 lib/vendor.samsung.hardware.gnss@1.0.so
-lib64/libfloatingfeature.so
+vendor/lib64/libfloatingfeature.so
 lib64/vendor.samsung.hardware.gnss@1.0.so
 vendor/bin/hw/gpsd
 vendor/bin/hw/vendor.samsung.hardware.gnss@1.0-service
@@ -112,6 +115,7 @@ vendor/lib/libwrappergps.so
 vendor/lib64/hw/android.hardware.gnss@1.1-impl.so
 vendor/lib64/hw/vendor.samsung.hardware.gnss@1.0-impl.so
 vendor/lib64/hw/gps.default.so
+vendor/lib64/vendor.samsung.hardware.gnss@1.0.so
 vendor/lib64/libwrappergps.so
 
 # Gatekeeper
@@ -135,6 +139,7 @@ vendor/bin/hw/vendor.samsung_slsi.hardware.ExynosHWCServiceTW@1.0-service
 vendor/etc/init/vendor.samsung_slsi.hardware.ExynosHWCServiceTW@1.0-service.rc
 vendor/lib/egl/libGLES_mali.so
 vendor/lib/hw/hwcomposer.exynos9810.so
+vendor/lib/libacryl_plugin_slsi_hdr10.so
 vendor/lib/libExynosHWCService.so
 vendor/lib/libRSDriverArm.so
 vendor/lib/libcsc.so
@@ -145,6 +150,7 @@ vendor/lib/libion_exynos.so
 vendor/lib/libmpp.so
 vendor/lib64/egl/libGLES_mali.so
 vendor/lib64/hw/hwcomposer.exynos9810.so
+vendor/lib64/libacryl_plugin_slsi_hdr10.so
 vendor/lib64/libExynosHWCService.so
 vendor/lib64/libRSDriverArm.so
 vendor/lib64/libcsc.so
@@ -168,6 +174,7 @@ vendor/lib/libskeymaster3device.so
 vendor/lib64/hw/keystore.mdfpp.so
 vendor/lib64/libkeymaster2_mdfpp.so
 vendor/lib64/libskeymaster3device.so
+vendor/lib64/libkeymaster_helper_vendor.so
 
 # LPM
 bin/lpm
@@ -233,7 +240,9 @@ vendor/lib64/libMcClient.so
 etc/nfc_key
 etc/nfcee_access.xml
 vendor/etc/libnfc-nci.conf
+vendor/lib/libsecnativefeature.so
 vendor/lib64/vendor.samsung.hardware.nfc@1.1.so
+vendor/lib64/libsecnativefeature.so
 vendor/bin/hw/sec.android.hardware.nfc@1.1-service
 vendor/etc/init/sec.android.hardware.nfc@1.1-service.rc
 vendor/etc/libnfc-sec-vendor.conf
