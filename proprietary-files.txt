@@ -6,7 +6,6 @@ lib/hw/audio.playback_record.default.so
 lib/hw/audio.tms.default.so
 lib/libsecaudiocoreutils.so
 lib/libtinyalsa.so
-lib64/libtinyalsa.so
 vendor/lib/hw/audio.primary.universal9810.so
 vendor/lib/libSamsungPostProcessConvertor.so
 vendor/lib/lib_SamsungRec_06006.so
@@ -14,6 +13,7 @@ vendor/lib/lib_SoundAlive_SRC384_ver320.so
 vendor/lib/lib_soundaliveresampler.so
 vendor/lib/libaudio-ril.so
 vendor/lib/vndk/libaudioroute.so
+vendor/lib/vndk/libtinyalsa.so
 vendor/lib/librecordalive.so
 vendor/lib/libsecaudioinfo.so
 vendor/lib/hw/sound_trigger.primary.universal9810.so
