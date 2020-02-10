@@ -37,7 +37,6 @@ service cpboot-daemon /vendor/bin/cbd -d -tss310 -bm -mm -P platform/11120000.uf
     class main
     user root
     group radio cache inet misc audio sdcard_rw log sdcard_r shell system
-    seclabel u:r:cbd:s0
 
 # SS/DS configuration
 on property:ro.multisim.simslotcount=*
