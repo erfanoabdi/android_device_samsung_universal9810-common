@@ -7,6 +7,9 @@ ifneq ($(findstring lineage, $(TARGET_PRODUCT)),)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 endif
 
+PRODUCT_ENFORCE_RRO_TARGETS := \
+    framework-res
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@4.0-impl \
