@@ -343,6 +343,7 @@ vendor/lib/libstagefright_soft_ddpdec.so
 # WiFi
 vendor/bin/hw/macloader
 vendor/bin/hw/mfgloader
+vendor/bin/hw/android.hardware.wifi@1.0-service
 vendor/etc/init/wifi.rc
 vendor/etc/init/wifi_brcm.rc
 vendor/etc/wifi/bcmdhd_clm.blob
@@ -363,3 +364,4 @@ vendor/etc/wifi/p2p_supplicant_overlay.conf
 vendor/etc/wifi/wpa_supplicant_overlay.conf
 vendor/lib/libwifi-hal.so
 vendor/lib64/libwifi-hal.so
+vendor/lib64/vendor.samsung.hardware.wifi@1.0.so
