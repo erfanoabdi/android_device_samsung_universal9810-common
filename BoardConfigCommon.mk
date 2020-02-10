@@ -100,6 +100,9 @@ NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 OVERRIDE_RS_DRIVER := libRSDriverArm.so
 BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
 
+# HIDL Manifest
+DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
+
 # DEX Pre-optimization
 ifeq ($(HOST_OS),linux)
   ifneq ($(TARGET_BUILD_VARIANT),eng)
