@@ -6,6 +6,10 @@ COMMON_PATH := device/samsung/universal9810-common
 # Include
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
+# Audio
+USE_XML_AUDIO_POLICY_CONF := 1
+TARGET_EXCLUDES_AUDIOFX := true
+
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
 BOARD_CUSTOM_BT_CONFIG := $(COMMON_PATH)/bluetooth/libbt_vndcfg.txt
