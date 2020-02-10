@@ -1,15 +1,2 @@
-# Samsung specific
-ro.product_ship=true
-ro.debug_level=0x4f4c
-
-# RIL
-rild.libargs=-d /dev/umts_ipc0
-
 # read DS/SS property
 import /efs/factory.prop
-
-# Disable ConsumerIR
-config.disable_consumerir=true
-
-# Enable ADB authentication
-ro.adb.secure=1

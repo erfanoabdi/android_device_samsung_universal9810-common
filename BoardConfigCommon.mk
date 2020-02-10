@@ -3,13 +3,23 @@
 
 COMMON_PATH := device/samsung/universal9810-common
 
+# Include
+TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
+
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
+BOARD_CUSTOM_BT_CONFIG := $(COMMON_PATH)/bluetooth/libbt_vndcfg.txt
+BOARD_HAVE_BLUETOOTH := true
+
+# Firmware
+TARGET_NO_BOOTLOADER := true
+TARGET_NO_RADIOIMAGE := true
+
 # Platform
 BOARD_VENDOR := samsung
 TARGET_BOARD_PLATFORM := exynos5
 TARGET_SOC := exynos9810
 TARGET_BOOTLOADER_BOARD_NAME := universal9810
-TARGET_NO_BOOTLOADER := true
-TARGET_NO_RADIOIMAGE := true
 
 # Architecture
 TARGET_ARCH := arm64
@@ -25,11 +35,8 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
-# Kernel
-TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_HEADER_ARCH := arm64
-
-# Image
+# Extracted with libbootimg
+BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_SEPARATED_DT := true
@@ -37,6 +44,11 @@ BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_CUSTOM_DTBTOOL := dtbhtoolExynos
+
+# Kernel
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_HEADER_ARCH := arm64
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 57671680
@@ -48,6 +60,7 @@ BOARD_CACHEIMAGE_PARTITION_SIZE    := 209715200
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Filesystem
+BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
@@ -75,23 +88,17 @@ TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_FBE := true
 endif
 
-# Android Verified Boot
-BOARD_AVB_ENABLE := false
-BOARD_BUILD_DISABLED_VBMETAIMAGE := true
-
 # VNDK
 BOARD_VNDK_VERSION := current
 
 # Vendor
 TARGET_COPY_OUT_VENDOR := vendor
 
-# Enable 64-bits binder
-TARGET_USES_64_BIT_BINDER := true
-
 # Graphics
 TARGET_USES_HWC2 := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 OVERRIDE_RS_DRIVER := libRSDriverArm.so
+BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
 
 # DEX Pre-optimization
 ifeq ($(HOST_OS),linux)
@@ -101,11 +108,7 @@ ifeq ($(HOST_OS),linux)
   endif
 endif
 
-# Include
-TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
-
 # Properties
-BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 
 # Lineage hardware
@@ -116,6 +119,26 @@ endif
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
+
+# Wifi
+TARGET_USES_64_BIT_BCMDHD        := true
+BOARD_WLAN_DEVICE                := bcmdhd
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
+BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+WPA_SUPPLICANT_USE_HIDL          := true
+BOARD_HOSTAPD_DRIVER             := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_bcmdhd
+WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/dhd/parameters/firmware_path"
+WIFI_DRIVER_NVRAM_PATH_PARAM     := "/sys/module/dhd/parameters/nvram_path"
+WIFI_DRIVER_NVRAM_PATH           := "/vendor/etc/wifi/nvram_net.txt"
+WIFI_DRIVER_FW_PATH_STA          := "/vendor/etc/wifi/bcmdhd_sta.bin"
+WIFI_DRIVER_FW_PATH_AP           := "/vendor/etc/wifi/bcmdhd_apsta.bin"
+WIFI_BAND                        := 802_11_ABG
+WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
+
+# MACLOADER
+BOARD_HAVE_SAMSUNG_WIFI          := true
 
 # Inherit from the proprietary version
 -include vendor/samsung/universal9810-common/BoardConfigVendor.mk
