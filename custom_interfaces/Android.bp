@@ -1,0 +1,21 @@
+cc_library_shared {
+    name: "android.temporary.rdio@1.2",
+    vendor: true,
+    srcs: [
+        "android/hardware/radio/1.2/types.cpp",
+        "android/hardware/radio/1.2/RadioAll.cpp",
+        "android/hardware/radio/1.2/SapAll.cpp",
+        "android/hardware/radio/1.2/RadioIndicationAll.cpp",
+        "android/hardware/radio/1.2/RadioResponseAll.cpp",
+    ],
+    shared_libs: [
+        "libhidlbase",
+        "libhidltransport",
+        "libhwbinder",
+        "liblog",
+        "libutils",
+        "libcutils",
+        "android.hardware.radio@1.0",
+        "android.hardware.radio@1.1",
+    ],
+}
