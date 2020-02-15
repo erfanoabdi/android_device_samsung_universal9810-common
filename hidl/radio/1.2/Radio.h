@@ -46,11 +46,11 @@ using ::vendor::samsung::hardware::radio::V1_2::implementation::SecRadioResponse
 struct Radio : public IRadio {
     std::string interfaceName;
     std::mutex secIRadioMutex;
-    sp<::vendor::samsung::hardware::radio::V1_2::IRadio> secIRadio;
+    sp<::android::mirror::tmprdio::V1_2::IRadio> secIRadio;
 
     Radio(const std::string& interfaceName);
 
-    sp<::vendor::samsung::hardware::radio::V1_2::IRadio> getSecIRadio();
+    sp<::android::mirror::tmprdio::V1_2::IRadio> getSecIRadio();
 
     // Methods from ::android::hardware::radio::V1_0::IRadio follow.
     Return<void> setResponseFunctions(

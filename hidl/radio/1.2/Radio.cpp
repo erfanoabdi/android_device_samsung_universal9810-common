@@ -15,6 +15,7 @@
  */
 
 #include "Radio.h"
+#include <android/mirror/tmprdio/1.2/IRadio.h>
 
 namespace android {
 namespace hardware {
@@ -22,14 +23,12 @@ namespace radio {
 namespace V1_2 {
 namespace implementation {
 
-Radio::Radio(const std::string& interfaceName) : interfaceName(interfaceName) {
-    sp<::vendor::samsung::hardware::radio::V1_2::IRadio> secIRadio_tmp = ::vendor::samsung::hardware::radio::V1_2::IRadio::getService(interfaceName);
-}
+Radio::Radio(const std::string& interfaceName) : interfaceName(interfaceName) {}
 
-sp<::vendor::samsung::hardware::radio::V1_2::IRadio> Radio::getSecIRadio() {
+sp<::android::mirror::tmprdio::V1_2::IRadio> Radio::getSecIRadio() {
     std::lock_guard<std::mutex> lock(secIRadioMutex);
     if (!secIRadio) {
-        secIRadio = ::vendor::samsung::hardware::radio::V1_2::IRadio::getService(interfaceName);
+        secIRadio = ::android::mirror::tmprdio::V1_2::IRadio::getService(interfaceName);
     }
     return secIRadio;
 }
