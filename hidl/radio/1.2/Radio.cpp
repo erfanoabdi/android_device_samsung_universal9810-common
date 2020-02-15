@@ -22,7 +22,9 @@ namespace radio {
 namespace V1_2 {
 namespace implementation {
 
-Radio::Radio(const std::string& interfaceName) : interfaceName(interfaceName) {}
+Radio::Radio(const std::string& interfaceName) : interfaceName(interfaceName) {
+    secIRadio = getSecIRadio();
+}
 
 sp<::android::mirror::tmprdio::V1_2::IRadio> Radio::getSecIRadio() {
     std::lock_guard<std::mutex> lock(secIRadioMutex);
