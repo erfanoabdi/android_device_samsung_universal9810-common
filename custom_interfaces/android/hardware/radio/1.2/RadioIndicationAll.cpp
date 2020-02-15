@@ -1,4 +1,4 @@
-#define LOG_TAG "android.hardware.radio@1.2::RadioIndication"
+#define LOG_TAG "android.temporary.rdio@1.2::RadioIndication"
 
 #include <android/log.h>
 #include <cutils/trace.h>
@@ -18,7 +18,7 @@ namespace hardware {
 namespace radio {
 namespace V1_2 {
 
-const char* IRadioIndication::descriptor("android.hardware.radio@1.2::IRadioIndication");
+const char* IRadioIndication::descriptor("android.temporary.rdio@1.2::IRadioIndication");
 
 __attribute__((constructor)) static void static_constructor() {
     ::android::hardware::details::getBnConstructorMap().set(IRadioIndication::descriptor,
@@ -168,24 +168,24 @@ __attribute__((destructor))static void static_destructor() {
 // static 
 ::android::hardware::Return<::android::sp<::android::hardware::radio::V1_2::IRadioIndication>> IRadioIndication::castFrom(const ::android::sp<::android::hardware::radio::V1_1::IRadioIndication>& parent, bool emitError) {
     return ::android::hardware::details::castInterface<IRadioIndication, ::android::hardware::radio::V1_1::IRadioIndication, BpHwRadioIndication>(
-            parent, "android.hardware.radio@1.2::IRadioIndication", emitError);
+            parent, "android.temporary.rdio@1.2::IRadioIndication", emitError);
 }
 
 // static 
 ::android::hardware::Return<::android::sp<::android::hardware::radio::V1_2::IRadioIndication>> IRadioIndication::castFrom(const ::android::sp<::android::hardware::radio::V1_0::IRadioIndication>& parent, bool emitError) {
     return ::android::hardware::details::castInterface<IRadioIndication, ::android::hardware::radio::V1_0::IRadioIndication, BpHwRadioIndication>(
-            parent, "android.hardware.radio@1.2::IRadioIndication", emitError);
+            parent, "android.temporary.rdio@1.2::IRadioIndication", emitError);
 }
 
 // static 
 ::android::hardware::Return<::android::sp<::android::hardware::radio::V1_2::IRadioIndication>> IRadioIndication::castFrom(const ::android::sp<::android::hidl::base::V1_0::IBase>& parent, bool emitError) {
     return ::android::hardware::details::castInterface<IRadioIndication, ::android::hidl::base::V1_0::IBase, BpHwRadioIndication>(
-            parent, "android.hardware.radio@1.2::IRadioIndication", emitError);
+            parent, "android.temporary.rdio@1.2::IRadioIndication", emitError);
 }
 
 BpHwRadioIndication::BpHwRadioIndication(const ::android::sp<::android::hardware::IBinder> &_hidl_impl)
         : BpInterface<IRadioIndication>(_hidl_impl),
-          ::android::hardware::details::HidlInstrumentor("android.hardware.radio@1.2", "IRadioIndication") {
+          ::android::hardware::details::HidlInstrumentor("android.temporary.rdio@1.2", "IRadioIndication") {
 }
 
 // Methods from ::android::hardware::radio::V1_2::IRadioIndication follow.
@@ -903,7 +903,7 @@ _hidl_error:
 
 
 BnHwRadioIndication::BnHwRadioIndication(const ::android::sp<IRadioIndication> &_hidl_impl)
-        : ::android::hidl::base::V1_0::BnHwBase(_hidl_impl, "android.hardware.radio@1.2", "IRadioIndication") { 
+        : ::android::hidl::base::V1_0::BnHwBase(_hidl_impl, "android.temporary.rdio@1.2", "IRadioIndication") {
             _hidl_mImpl = _hidl_impl;
             auto prio = ::android::hardware::details::gServicePrioMap.get(_hidl_impl, {SCHED_NORMAL, 0});
             mSchedPolicy = prio.sched_policy;
@@ -1879,7 +1879,7 @@ BnHwRadioIndication::~BnHwRadioIndication() {
     }return _hidl_err;
 }
 
-BsRadioIndication::BsRadioIndication(const ::android::sp<::android::hardware::radio::V1_2::IRadioIndication> impl) : ::android::hardware::details::HidlInstrumentor("android.hardware.radio@1.2", "IRadioIndication"), mImpl(impl) {
+BsRadioIndication::BsRadioIndication(const ::android::sp<::android::hardware::radio::V1_2::IRadioIndication> impl) : ::android::hardware::details::HidlInstrumentor("android.temporary.rdio@1.2", "IRadioIndication"), mImpl(impl) {
     mOnewayQueue.start(3000 /* similar limit to binderized */);
 }
 
@@ -1903,7 +1903,7 @@ BsRadioIndication::BsRadioIndication(const ::android::sp<::android::hardware::ra
 }
 
 ::android::status_t IRadioIndication::registerAsService(const std::string &serviceName) {
-    ::android::hardware::details::onRegistration("android.hardware.radio@1.2", "IRadioIndication", serviceName);
+    ::android::hardware::details::onRegistration("android.temporary.rdio@1.2", "IRadioIndication", serviceName);
 
     const ::android::sp<::android::hidl::manager::V1_0::IServiceManager> sm
             = ::android::hardware::defaultServiceManager();
@@ -1923,7 +1923,7 @@ bool IRadioIndication::registerForNotifications(
         return false;
     }
     ::android::hardware::Return<bool> success =
-            sm->registerForNotifications("android.hardware.radio@1.2::IRadioIndication",
+            sm->registerForNotifications("android.temporary.rdio@1.2::IRadioIndication",
                     serviceName, notification);
     return success.isOk() && success;
 }
