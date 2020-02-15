@@ -1,3 +1,5 @@
 package android.mirror.tmprdio@1.2;
 
 import android.hardware.radio@1.2::IRadio;
+
+interface IRadio extends android.hardware.radio@1.2::IRadio {};

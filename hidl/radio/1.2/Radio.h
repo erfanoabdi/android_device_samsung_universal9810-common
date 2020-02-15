@@ -20,6 +20,7 @@
 #include <hidl/MQDescriptor.h>
 #include <hidl/Status.h>
 #include <vendor/samsung/hardware/radio/1.2/IRadio.h>
+#include <android/mirror/tmprdio/1.2/IRadio.h>
 
 #include "SecRadioIndication.h"
 #include "SecRadioResponse.h"

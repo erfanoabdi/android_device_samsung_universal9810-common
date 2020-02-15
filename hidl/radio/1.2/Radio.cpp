@@ -15,7 +15,6 @@
  */
 
 #include "Radio.h"
-#include <android/mirror/tmprdio/1.2/IRadio.h>
 
 namespace android {
 namespace hardware {
