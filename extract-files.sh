@@ -78,6 +78,10 @@ function blob_fixup() {
         sed -i -z "s/    setprop wifi.interface wlan0\n\n/    setprop wifi.interface wlan0\n    setprop wifi.concurrent.interface swlan0\n\n/" "${2}"
         ;;
 
+    vendor/lib/libril.so | vendor/lib64/libril.so)
+        sed -i -z 's/android.hardware.radio@1.2.so/android.temporary.rdio@1.2.so/' "${2}"
+        ;;
+
     esac
 }
 

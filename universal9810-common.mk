@@ -206,6 +206,7 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.2-radio-service.samsung \
+    android.temporary.rdio@1.2 \
     libxml2
 
 # SamsungDoze
