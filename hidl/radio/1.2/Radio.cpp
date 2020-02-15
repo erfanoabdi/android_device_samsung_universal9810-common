@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+#include <hidl/HidlTransportSupport.h>
+
 #include "Radio.h"
 
 namespace android {
@@ -766,7 +768,9 @@ Return<void> Radio::setSimCardPower_1_1(int32_t serial,
 
 Return<void> Radio::startNetworkScan(
     int32_t serial, const ::android::hardware::radio::V1_1::NetworkScanRequest& request) {
+    ALOGD("startNetworkScan started, serial: %d", serial);
     getSecIRadio()->startNetworkScan(serial, request);
+    ALOGD("startNetworkScan done, serial: %d", serial);
     return Void();
 }
 
