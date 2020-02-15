@@ -793,7 +793,9 @@ Return<void> Radio::stopKeepalive(int32_t serial, int32_t sessionHandle) {
 // Methods from ::android::hardware::radio::V1_2::IRadio follow.
 Return<void> Radio::startNetworkScan_1_2(
     int32_t serial, const ::android::hardware::radio::V1_2::NetworkScanRequest& request) {
+    ALOGD("startNetworkScan_1_2 started, serial: %d", serial);
     getSecIRadio()->startNetworkScan_1_2(serial, request);
+    ALOGD("startNetworkScan_1_2 done, serial: %d", serial);
     return Void();
 }
 
