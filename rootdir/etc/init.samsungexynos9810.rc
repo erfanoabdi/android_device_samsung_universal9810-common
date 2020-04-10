@@ -1,7 +1,7 @@
-import init.samsung.rc
-import init.samsungexynos9810.usb.rc
-import init.gps.rc
-import init.baseband.rc
+import /vendor/etc/init/hw/init.samsung.rc
+import /vendor/etc/init/hw/init.samsungexynos9810.usb.rc
+import /vendor/etc/init/hw/init.gps.rc
+import /vendor/etc/init/hw/init.baseband.rc
 
 on early-init
     mkdir /efs 0771 radio system
@@ -669,7 +669,7 @@ on boot
     chown root system /efs/FactoryApp/mag_cal_param
 
 on fs
-    mount_all /fstab.samsungexynos9810
+    mount_all /vendor/etc/fstab.samsungexynos9810
     chown radio system /efs
     restorecon_recursive /efs
 
