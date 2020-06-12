@@ -7,6 +7,7 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_MODULE_TAGS := optional
+LOCAL_PROPRIETARY_MODULE := true
 
 LOCAL_MODULE := android.hardware.power@1.0-service.9810
 LOCAL_INIT_RC := android.hardware.power@1.0-service.9810.rc
